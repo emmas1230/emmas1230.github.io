@@ -7,7 +7,7 @@
 
 .hidden {
   position: absolute;
-  left: -9999rem;
+  left: -9999em;
 }
 
 
@@ -38,7 +38,6 @@ body {
 .wrapper {
   display: flex;
   flex-direction: column;
-  height: 100vh;
 }
 
 .header,
@@ -47,10 +46,6 @@ body {
 .slogan,
 .footer {
   width: 100%;
-}
-
-.navigation {
-  background: pink;
 }
 
 .main-content {
@@ -83,8 +78,8 @@ body {
   }
   .member a {
     display: block;
-    padding: 0.5rem;
-    margin-left: 1rem;
+    padding: 0.5rem 1rem;
+    margin-left: 0.5rem
   }
   .logo {
     padding: 1rem;
@@ -108,6 +103,88 @@ body {
     color: #fff;
     height: 30px;
   }
+  .menubar-container {
+    position: absolute;
+    top: 4rem;
+    right: 1rem;
+    width: 40px;
+    height: 40px;
+    overflow: hidden;
+  }
+  .btn-menubar {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    padding: 40px 0 0 0;
+    border: 0;
+    background: transparent;
+    overflow: hidden;
+    cursor: pointer;
+  }
+  .menubar {
+    display: block;
+    width: 40px;
+    height: 10px;
+    background: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .menubar-top {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+  .menubar-middle {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+  }
+  .menubar-bottom {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+  .menubar-act .menubar-top {
+    transform: rotate(45deg);
+    top: 50%;
+    margin-top: -5px;
+  }
+  .menubar-act .menubar-middle {
+    transform: translateX(-100%) translateY(-5px);
+  }
+  .menubar-act .menubar-bottom {
+    transform: rotate(-45deg);
+    top: 50%;
+    margin-top: -5px;
+  }
+  .main-menu {
+    transform: translateX(-100%);
+    background: rgba(0, 0, 0, 0.85);
+    color: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 70vw;
+    height: 100vh;
+    padding: 2rem;
+    box-sizing: border-box;
+    transition: all 0.2s;
+    font-size: 10px;
+  }
+  .menu-act {
+    transform: translateX(0);
+  }
+  .sub-menu {
+    list-style: circle;
+    padding-left: 2rem;
+  }
+  .sub-menu li {
+    margin: 0.5rem 0;
+  }
 }
 
 
@@ -118,7 +195,7 @@ body {
     align-items: center;
   }
   .header,
-  .navigation,
+  .main-menu,
   .main-content,
   .slogan,
   .footer {
@@ -161,5 +238,28 @@ body {
     background: #988574;
     color: #fff;
     padding: 0 1rem;
+  }
+  .navigation {
+    background: #988574;
+    border-top: 2px solid #222;
+    border-bottom: 2px solid #222;
+    padding: 1rem 0;
+  }
+  .menubar-container {
+    display: none;
+  }
+  .main-menu {
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    color: #fff;
+  }
+  .main-menu span {
+    font-size: 1rem;
+    font-weight: 700;
+    text-shadow: -1px 0 0 #000, 0 -1px 0 #000, 1px 0 0 #000, 0 1px 0 #000;
+  }
+  .sub-menu li {
+    margin: 0.5rem 0 0.5rem 0.5rem;
   }
 }
